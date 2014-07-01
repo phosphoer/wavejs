@@ -16,7 +16,7 @@ Use it for whatever!
 // the function will just return false, and the callback will be called with an error parameter.
 // The second parameter is the name to refer to that sound by in the future.
 // The third parameter is an optional callback for when the sound has been loaded.
-Wave.loadSound(["sounds/mysound.ogg", "sounds/mysound.mp3"], "mysound", function(name, error)
+Wave.load(["sounds/mysound.ogg", "sounds/mysound.mp3"], "mysound", function(name, error)
 {
   // Error checking
   if (error)
@@ -29,12 +29,12 @@ Wave.loadSound(["sounds/mysound.ogg", "sounds/mysound.mp3"], "mysound", function
   // The first parameter is the sound name to play
   // The second parameter is an optional callback when the sound has ended.
   // The callback is passed directly to audio.onended (html5) or source.onended (webaudio)
-  Wave.playSound("mysound", function()
+  Wave.play("mysound", function()
   {
     console.log("Sound ended!");
   });
 });
 
 // You can also load a sound with just a single string instead of an array
-Wave.loadSound("sounds/mysound.wav", "mysound");
+Wave.load("sounds/mysound.wav", "mysound");
 ```
